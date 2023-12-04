@@ -17,20 +17,41 @@ const CountryListContainer = () => {
         loadCountryData();
     }, [])
 
+    const [visitedCountriesList, setVisitedCountryList] = useState(null)
+    
+    const addVisitedCountries = (visitedCountriesName) => {
+        
+        
+        const updateCountriesList = [...visitedCountriesList];
+        updateCountriesList.push(visitedCountriesName);
+       
+    
+        //set countryList using array
+        setVisitedCountryList(updateCountriesList);
+        
+
+
+        // add country to VisitedList
+
+
+    }
     
 
     
     return ( 
         <>
             <h1>My Bucket List</h1>
-            <h2>Countries to Visit</h2>
-            {countryList ? (
-            countryList.map((country, index) => (
-        <p key={index}>{country.name.common}</p>
-            ))
-            ) : (
-                    <p>Loading country data...</p>
-            )}
+            
+            
+            {countryList ? <CountryList countryList={countryList}/>
+             : <p>Loading country data...</p>
+            }
+           
+            
+            
+
+
+            
         </>
     );
 }

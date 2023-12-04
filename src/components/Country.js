@@ -2,7 +2,13 @@ const Country = ({countryName}) => {
     
     return ( 
         <section>
-            {/* <h2>{countryName}</h2> */}
+            <h3>{countryName}</h3>
+            <label> Visited ? </label>
+            <input 
+            type="checkbox" 
+            value="countryName" 
+            
+            />
         </section>
     );
 }
