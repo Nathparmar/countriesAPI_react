@@ -1,16 +1,14 @@
-const Country = ({countryName}) => {
-    
-    return ( 
-        <section>
-            <h3>{countryName}</h3>
-            <label> Visited ? </label>
-            <input 
-            type="checkbox" 
-            value="countryName" 
-            
-            />
-        </section>
+
+
+const Country = ({ countryName, onButtonClick, visited }) => {
+    return (
+      <section>
+        <h3>{countryName}</h3>
+        <button onClick={onButtonClick}>{visited ? 'Visited' : 'Visit?'}</button>
+      </section>
     );
-}
- 
-export default Country;
+  };
+  
+  export default Country;
+  
+
