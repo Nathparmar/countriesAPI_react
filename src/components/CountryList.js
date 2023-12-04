@@ -1,7 +1,6 @@
-const CountryList = ({countrylist}) => {
+const CountryList = ({countryList}) => {
     return ( 
         <>
-       
         </>
     );
 }
