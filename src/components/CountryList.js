@@ -24,10 +24,10 @@ const CountryList = ({ countryList, visitedCountriesList, onVisit }) => {
   return (
     <>
       <h2><b>Countries to Visit</b></h2>
-      <ul>{displayCountryList}</ul>
+        <ul>{displayCountryList}</ul>
       <hr />
-      <h2><b>Visited Countries</b></h2>
-      {displayVisitedList}
+        <h2><b>Visited Countries</b></h2>
+      <ul>{displayVisitedList}</ul>
     </>
   );
 };

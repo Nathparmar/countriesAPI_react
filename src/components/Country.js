@@ -7,7 +7,8 @@ const Country = ({ countryName, flag, onButtonClick, visited }) => {
         <button onClick={onButtonClick}>{visited ? 'Visited' : 'Visit?'}</button>
       </section>
     );
-  };
+
+};
   
   export default Country;
   
