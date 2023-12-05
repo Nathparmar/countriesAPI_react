@@ -19,7 +19,9 @@ const CountryListContainer = () => {
   };
 
   useEffect(() => {
+
     loadCountryData();
+
   }, []);
 
   const handleVisitedCountries = (visitedCountry) => {
@@ -46,6 +48,7 @@ const CountryListContainer = () => {
       />
     </>
   );
+  
 };
 
 export default CountryListContainer;
