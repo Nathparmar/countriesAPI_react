@@ -2,16 +2,23 @@ import React from 'react';
 import Country from './Country';
 
 const CountryList = ({ countryList, visitedCountriesList, onVisit }) => {
-  const displayCountryList = countryList.map((country, index) => (
+  
+    const displayCountryList = countryList.map((country, index) => (
     <Country
       key={index}
       countryName={country.name.common}
+      flag = {country.flag}
       onButtonClick={() => onVisit(country)}
     />
   ));
 
   const displayVisitedList = visitedCountriesList.map((visitedCountry, index) => (
-    <Country key={index} countryName={visitedCountry.name.common} visited />
+    <Country 
+        key={index} 
+        countryName={visitedCountry.name.common} 
+        flag = {visitedCountry.flag}
+        visited 
+    />
   ));
 
   return (
