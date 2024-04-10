@@ -21,11 +21,11 @@ const CountriesToVisitList = ({countryList, onVisit}) => {
   ));
 
   return (
-    <>
-        <h2><b>Countries to Visit</b></h2>
-            <ul>{displayCountryList}</ul>
+    <section className='countries-to-visit-section'>
+      <h2 className='countries-to-visit-title'><b>Countries to Visit</b></h2>
+      <ul>{displayCountryList}</ul>
     
-    </>
+    </section>
   )
 }
 

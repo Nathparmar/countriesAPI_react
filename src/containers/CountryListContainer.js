@@ -76,18 +76,20 @@ const CountryListContainer = () => {
             <CountrySearch onSearch={handleSearch} />
             <ContinentsFilter countryList={countryList} visitedCountriesList={visitedCountriesList}/>
         </section>
-        {!hasSearched ? (
-            <>
+        <section className='countryListBoxes'>
+      
+          
             <CountriesToVisitList countryList={countryList} onVisit={handleVisitedCountries} />
-            <hr />
+            
             <VisitedCountries visitedCountriesList={visitedCountriesList} />
-            </>
-        ) : (
+            
+        </section>
             <>
-           <FilteredCountries filteredCountries={filteredCountries} 
-            hasSearched={hasSearched}/>
+           {/* <FilteredCountries filteredCountries={filteredCountries} 
+            hasSearched={hasSearched}/> */}
             </>
-        )}
+        
+        
       </>
     );
   

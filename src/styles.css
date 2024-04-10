@@ -1,0 +1,71 @@
+h1{
+    text-align: center;
+}
+.countryListBoxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 25px; */
+}
+  
+
+
+.countries-to-visit-title{
+   text-align: center;
+   margin-top: 2em;
+   margin-bottom: 2em;
+    
+}
+
+.countries-to-visit-section{
+    align-items: center;
+    text-align: center;
+}
+
+.country-section{
+    margin-bottom: 2em;
+    background-color: cornsilk;
+    border-radius: 10px;
+    margin-right: 2em;
+    display: grid;
+    grid-template-columns: 3fr 1fr ;
+    
+}
+
+.countryname-flag-div{
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+}
+
+.country-name{
+    text-align: left;
+    font-size: x-large;
+    margin-left: 2em;
+    padding-top: 2.5em;
+
+   
+    
+}
+
+.country-flag{
+   text-align: center; 
+    font-size: 60px;
+    padding: 0%;
+   
+} 
+
+
+.visit-btn{
+    padding: auto;
+    margin-top: 6em;
+    
+}
+
+
+
+.info-btn{
+   padding: auto;
+}  

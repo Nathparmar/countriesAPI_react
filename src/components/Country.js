@@ -22,11 +22,15 @@ const Country = ({ countryName, flag, onButtonClick, visited, countryDetails }) 
   
   
   return (
-      <section>
-        <h3>{countryName} {flag}</h3>
-        <button onClick={onButtonClick}>{visited ? 'Visited' : 'Visit?'}</button>
-        <button onClick={displayinfo}>{showDetails ? 'Less Info' : 'More Info'} </button>
-
+      <section className="country-section">
+        <div className="countryname-flag-div">
+          <h3 className="country-name">{countryName}</h3>
+          <h3 className="country-flag">{flag}</h3>
+        </div>
+        <div className="btns">
+        <button className="visit-btn" onClick={onButtonClick}>{visited ? 'Visited' : 'Visit?'}</button>
+        <button className="info-btn"  onClick={displayinfo}>{showDetails ? 'Less Info' : 'More Info'} </button>
+        </div>
         {showDetails && (
         <div>
           <h4>Country Details:</h4>

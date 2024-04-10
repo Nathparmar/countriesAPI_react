@@ -23,8 +23,8 @@ const VisitedCountries = ({visitedCountriesList}) => {
     ));
 
   return (
-    <>
-        <h2><b>Visited Countries</b></h2>
+    <section className='countries-to-visit-section'>
+        <h2 className='countries-to-visit-title'><b>Visited Countries</b></h2>
             {visitedCountriesList.length === 0 ? (
                 <h3>You haven't been to any countries yet...</h3>
             ) : (
@@ -32,7 +32,7 @@ const VisitedCountries = ({visitedCountriesList}) => {
             )}
        
     
-    </>
+    </section>
   )
 }
 
