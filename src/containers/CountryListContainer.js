@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import CountryList from '../components/CountryList';
 import CountrySearch from '../components/CountrySearch';
 import ContinentsFilter from '../components/ContinentsFilter';
+import CountriesToVisitList from '../components/CountriesToVisitList';
+import VisitedCountries from '../components/VisitedCountries';
+import FilteredCountries from '../components/FilteredCountries';
 
 const CountryListContainer = () => {
   
     const [countryList, setCountryList] = useState([]);
     const [visitedCountriesList, setVisitedCountriesList] = useState([]);
-    const [filteredCountries, Countries] = useState([]);
+    const [filteredCountries, setFilteredCountries] = useState([]);
+    const [hasSearched, setHasSearched] = useState(false)
     
 
 
@@ -16,6 +19,7 @@ const CountryListContainer = () => {
         const response = await fetch('https://restcountries.com/v3.1/all');
         const data = await response.json();
         setCountryList(data);
+        setFilteredCountries(data);
       } catch (error) {
         console.error('Error loading country data:', error);
       }
@@ -55,22 +59,35 @@ const CountryListContainer = () => {
           
       setCountryList(filteredCountries);
       setVisitedCountriesList(filteredVisitedCountries)
-         
+      // setFilteredCountries(filteredCountries)
+      // setHasSearched(true)
+
+     
     }
+
+    
+
+
       
     return (
       <>
         <h1>My Bucket List</h1>
         <section className="searchForm">
             <CountrySearch onSearch={handleSearch} />
-            <ContinentsFilter/>
+            <ContinentsFilter countryList={countryList} visitedCountriesList={visitedCountriesList}/>
         </section>
-
-        <CountryList
-          countryList={countryList}
-          visitedCountriesList={visitedCountriesList}
-          onVisit={handleVisitedCountries}
-        />
+        {!hasSearched ? (
+            <>
+            <CountriesToVisitList countryList={countryList} onVisit={handleVisitedCountries} />
+            <hr />
+            <VisitedCountries visitedCountriesList={visitedCountriesList} />
+            </>
+        ) : (
+            <>
+           <FilteredCountries filteredCountries={filteredCountries} 
+            hasSearched={hasSearched}/>
+            </>
+        )}
       </>
     );
   
