@@ -3,12 +3,23 @@ import Country from './Country';
 
 const CountryList = ({ countryList, visitedCountriesList, onVisit }) => {
   
+    
+    
+    
     const displayCountryList = countryList.map((country, index) => (
         <Country
         key={index}
         countryName={country.name.common}
         flag = {country.flag}
         onButtonClick={() => onVisit(country)}
+        countryDetails={{
+            countryCapital: country.capital,
+            countryContinent: country.continents.join(', '),
+            countryPopulation: country.population,
+            countryLanguages: country.languages
+        }}
+
+
         />
     ));
 
@@ -18,8 +29,19 @@ const CountryList = ({ countryList, visitedCountriesList, onVisit }) => {
             countryName={visitedCountry.name.common} 
             flag = {visitedCountry.flag}
             visited 
+            countryDetails={{
+                countryCapital: visitedCountry.capital,
+                countryContinent: visitedCountry.continents.join(', '),
+                countryPopulation: visitedCountry.population,
+                countryLanguages: visitedCountry.languages
+            }}
+    
         />
     ));
+
+    // const displayinfo = countryList.map((selectedCountry, index) => {
+    //    return selectedCountry.capital;
+    // });
 
     return (
         <>
@@ -28,6 +50,7 @@ const CountryList = ({ countryList, visitedCountriesList, onVisit }) => {
             <hr />
                 <h2><b>Visited Countries</b></h2>
             <ul>{displayVisitedList}</ul>
+            
         </>
     );
 };
