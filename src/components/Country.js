@@ -10,6 +10,11 @@ const Country = ({ countryName, flag, onButtonClick, visited, countryDetails }) 
   };
 
   const getLanguages = (languages) => {
+
+    if (!languages || typeof languages !== "object") {
+      return null;
+  }
+
     // Convert the languages object into an array of language names
     const languageNames = Object.values(languages);
     return languageNames.join(', '); // Join language names with comma
@@ -29,6 +34,7 @@ const Country = ({ countryName, flag, onButtonClick, visited, countryDetails }) 
           <p>Continent: {countryDetails.countryContinent}</p>
           <p>Population: {countryDetails.countryPopulation}</p>
           <p>Languages: {getLanguages(countryDetails.countryLanguages)}</p>
+          <p>Area: {countryDetails.countryArea} square km</p>
         </div>
       )}
   
